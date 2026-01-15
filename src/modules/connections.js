@@ -3,7 +3,21 @@ import Converters from "./converters.js";
 import Stations from "./stations.js";
 import Types from "./types.js";
 
+/**
+ * Module for searching train connections and retrieving their details.
+ * @extends BaseModule
+ */
 export default class Connections extends BaseModule {
+  /**
+   * Searches for connections between two stations.
+   * 
+   * @param {string} stationFrom - Name of the departure station.
+   * @param {string} stationTo - Name of the arrival station.
+   * @param {string} [departureAfter=Types.DEP_DATE.now] - Departure date/time in ISO 8601 format.
+   * @param {boolean} [onlyDirect=false] - Whether to search for direct connections only.
+   * @returns {Promise<Array|object>} List of connections or error object.
+   * @throws {Error} If required parameters are missing.
+   */
   async findConnection(stationFrom, stationTo, departureAfter = Types.DEP_DATE.now, onlyDirect = false) {    
     if (!stationFrom || !stationTo || !departureAfter) {
       throw new Error("Station from, station to and departure after are required");
@@ -49,6 +63,13 @@ export default class Connections extends BaseModule {
     return resp;
   }
 
+  /**
+   * Retrieves detailed information about a specific connection.
+   * 
+   * @param {string} connectionId - The UUID of the connection.
+   * @returns {Promise<object>} Connection details.
+   * @throws {Error} If connection ID is missing or invalid.
+   */
   async getConnectionInfo(connectionId) {
     if (!connectionId) {
       throw new Error("Connection ID is required");
@@ -63,6 +84,13 @@ export default class Connections extends BaseModule {
     return resp;
   }
 
+  /**
+   * Retrieves the ticket price for a specific connection.
+   * 
+   * @param {string} connectionId - The UUID of the connection.
+   * @returns {Promise<object>} Price information.
+   * @throws {Error} If connection ID is missing or invalid.
+   */
   async getConnectionTicketPrice(connectionId) {
     if (!connectionId) {
       throw new Error("Connection ID is required");

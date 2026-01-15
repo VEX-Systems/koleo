@@ -4,6 +4,7 @@ import Stations from "./modules/stations.js";
 import Connections from "./modules/connections.js";
 import Converters from "./modules/converters.js";
 import Types from "./modules/types.js";
+import User from "./modules/user.js";
 
 class Koleo {
   constructor() {
@@ -13,7 +14,9 @@ class Koleo {
     this.connections = new Connections();
     this.converters = new Converters();
     this.types = new Types();
+    this.user = new User();
   }
-} 
+}
+
 
 export default Koleo;

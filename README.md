@@ -2,11 +2,11 @@
    <img width="150" src="https://sc.vex.systems/branding/vex_n.png" /> 
  </p> 
   
- # OpenKoleo (open-koleo)
+ # OpenKoleo (koleo)
   
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
- [![npm version](https://img.shields.io/npm/v/open-koleo.svg)](https://www.npmjs.com/package/open-koleo)
- [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/VEX-Systems/open-koleo)
+ [![npm version](https://img.shields.io/npm/v/koleo.svg)](https://www.npmjs.com/package/koleo)
+ [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/VEX-Systems/koleo)
   
 A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provides a comprehensive interface for searching connections, stations, brands, and discounts with built-in validation and type safety.
 
@@ -16,6 +16,7 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  
  - 🚆 **Search Connections**: Find train connections between stations with prices and details.
  - 🚉 **Stations**: Search stations by name, slug, city, or region.
+ - 👤 **User Account**: Authenticate users and retrieve profile data, tickets, and passenger info.
  - 🎫 **Brands & Discounts**: Retrieve available train operators and discount types.
  - 🛠️ **Utilities**: Built-in helpers for slug conversion and validation.
  
@@ -44,8 +45,12 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  const stations = await client.stations.findStationsByName('Gdańsk');
  console.log(stations);
  ```
+
+ See [examples](./docs/EXAMPLES.md) for more advanced usage scenarios including user authentication.
  
  ## Documentation
+ 
+ Detailed API documentation is available in [docs/API.md](./docs/API.md).
  
  ### Modules
  
@@ -59,6 +64,14 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
 - `getStationsByCity(city)`: Filter stations by city.
  - `getStationsByRegion(region)`: Filter stations by region.
  
+ #### `user`
+ - `performLogin(email, password)`: Authenticate and get access token.
+ - `getMe(accessToken)`: Get user profile.
+ - `getPassangers(accessToken)`: Get saved passengers.
+ - `getActiveTickets(accessToken)`: Get active tickets.
+ - `getInactiveTickets(accessToken, page, per_page)`: Get past tickets.
+ - `getTransactionHistory(accessToken)`: Get wallet history.
+
  #### `connections`
  - `findConnection(from, to, date, onlyDirect)`: Search for connections.
  - `getConnectionInfo(id)`: Get details of a specific connection.

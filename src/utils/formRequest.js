@@ -2,12 +2,12 @@ import createHeaders from "./createHeaders.js";
 
 const BASE_URL = "https://api.koleo.pl/v2";
 
-const formRequest = async (endpoint, body = null) => {
+const formRequest = async (endpoint, body = null, accessToken = null) => {
   const method = body ? "POST" : "GET";
 
   const res = await fetch(`${BASE_URL}${endpoint}`, {
     method,
-    headers: body ? createHeaders(true) : createHeaders(),
+    headers: createHeaders(true, accessToken),
     body: body ? JSON.stringify(body) : null,
   });
 
