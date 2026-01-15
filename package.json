@@ -1,6 +1,6 @@
 {
   "name": "open-koleo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An unofficial API wrapper for Koleo.pl - a Polish railway connection search platform",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VEX-Systems/open-koleo.git"
+    "url": "git+https://github.com/VEX-Systems/koleo.git"
   },
   "keywords": [
     "koleo",
@@ -20,7 +20,7 @@
   "author": "Jakub Pelc (jakub.pelc@vex.systems)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/VEX-Systems/open-koleo/issues"
+    "url": "https://github.com/VEX-Systems/koleo/issues"
   },
-  "homepage": "https://github.com/VEX-Systems/open-koleo#readme"
+  "homepage": "https://github.com/VEX-Systems/koleo#readme"
 }
