@@ -8,8 +8,6 @@
  [![npm version](https://img.shields.io/npm/v/open-koleo.svg)](https://www.npmjs.com/package/open-koleo)
  [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/VEX-Systems/open-koleo)
   
- An unofficial API wrapper for Koleo.pl - a Polish railway connection search platform.
-
 A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provides a comprehensive interface for searching connections, stations, brands, and discounts with built-in validation and type safety.
 
 > **Note**: This library is not affiliated with Koleo.pl or PKP. Use it responsibly.
