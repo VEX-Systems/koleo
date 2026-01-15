@@ -45,8 +45,6 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  const stations = await client.stations.findStationsByName('Gdańsk');
  console.log(stations);
  ```
-
- See [examples](./docs/EXAMPLES.md) for more advanced usage scenarios including user authentication.
  
  ## Documentation
  
@@ -60,9 +58,11 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  - `getAllStations()`: Returns all available stations.
  - `findStationsByName(name)`: Live search for stations by name.
  - `getBySlug(slug)`: Get detailed station info by its slug.
-- `getByName(name)`: Get detailed station info by exact name.
-- `getStationsByCity(city)`: Filter stations by city.
+ - `getByName(name)`: Get detailed station info by exact name.
+ - `getStationsByCity(city)`: Filter stations by city.
  - `getStationsByRegion(region)`: Filter stations by region.
+ - `getStationInfoByID(id)`: Get station details by ID.
+ - `getStationsInfoByIDs(ids)`: Get details for multiple stations by IDs.
  
  #### `user`
  - `performLogin(email, password)`: Authenticate and get access token.
@@ -91,17 +91,19 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
 - `KREGEX.connection_id`: Regex pattern for validating connection IDs.
 
 ## Error Handling
-
-The API wrapper returns structured error objects when operations fail. Common error codes include:
-
-- `stationNotFound`: The requested station could not be found.
-- `slugConversionFailed`: Failed to convert a station name to a valid Koleo slug.
-- `stationsNotFound`: One or both stations in a connection search could not be resolved.
-- `noConnectionsFound`: No connections were found for the given criteria.
-- `brandsNotFound`: Failed to retrieve the list of brands.
-- `discountsNotFound`: Failed to retrieve the list of discounts.
-
-## Contributing
+ 
+ The API wrapper returns structured error objects when operations fail. Common error codes include:
+ 
+ - `stationNotFound`: The requested station could not be found.
+ - `slugConversionFailed`: Failed to convert a station name to a valid Koleo slug.
+ - `stationsNotFound`: One or both stations in a connection search could not be resolved.
+ - `noConnectionsFound`: No connections were found for the given criteria.
+ - `brandsNotFound`: Failed to retrieve the list of brands.
+ - `discountsNotFound`: Failed to retrieve the list of discounts.
+ - `couldNotObtainAccessToken`: Failed to login (e.g., invalid credentials).
+ - `invalidAccessToken`: The provided access token is invalid or expired.
+ 
+ ## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
