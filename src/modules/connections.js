@@ -101,7 +101,7 @@ export default class Connections extends BaseModule {
         throw new Error("Invalid Connection ID format. Expected UUID.");
     }
     
-    let resp = await this.request(`/main/eol_connections/${connectionId}/price`);
-    return resp;
+    let response = await this.request(`/main/eol_connections/${connectionId}/price`);
+    return response;
   }     
 }
