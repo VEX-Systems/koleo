@@ -104,6 +104,7 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  - `discountsNotFound`: Failed to retrieve the list of discounts.
  - `couldNotObtainAccessToken`: Failed to login (e.g., invalid credentials).
  - `invalidAccessToken`: The provided access token is invalid or expired.
+ - `discountCardsNotFound`: Failed to retrieve the list of discount cards.
  
  ## Contributing
 
