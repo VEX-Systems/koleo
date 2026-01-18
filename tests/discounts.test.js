@@ -21,9 +21,11 @@ describe('Discounts Module', () => {
     }
   });
 
+  const TEST_DISCOUNT_USER_AGE = 26;
+
   it('should fetch discount cards successfully', async () => {
     const discounts = new Discounts();
-    const result = await discounts.getDiscountCards(26);
+    const result = await discounts.getDiscountCards(TEST_DISCOUNT_USER_AGE);
     
     if (result.error) {
        if (result.code) {
