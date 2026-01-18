@@ -21,6 +21,7 @@ describe('Discounts Module', () => {
     }
   });
 
+  // Use a representative adult age; this value is not a boundary, just a typical user age for discount tests.
   const TEST_DISCOUNT_USER_AGE = 26;
 
   it('should fetch discount cards successfully', async () => {
