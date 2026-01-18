@@ -20,4 +20,20 @@ describe('Discounts Module', () => {
         }
     }
   });
+
+  it('should fetch discount cards successfully', async () => {
+    const discounts = new Discounts();
+    const result = await discounts.getDiscountCards(26);
+    
+    if (result.error) {
+       if (result.code) {
+           assert.ok(result.code);
+       } else {
+           assert.fail(`API returned error: ${result.error}`);
+       }
+    } else {
+        assert.ok(result);
+        assert.ok(typeof result === 'object');
+    }
+  });
 });

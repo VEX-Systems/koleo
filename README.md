@@ -82,6 +82,7 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
  
  #### `discounts`
  - `getDiscounts()`: List all available discounts.
+ - `getDiscountCards(age)`: Get available discount cards.
  
  #### `converters`
 - `nameToSlug(name, validate)`: Convert station name to Koleo slug. Optional validation against API.
@@ -89,6 +90,7 @@ A robust, unofficial Node.js wrapper for the Koleo.pl API by VEX Systems. Provid
 #### `types`
 - `DEP_DATE.now`: Returns current date in format required by API (YYYY-MM-DDTHH:MM:SS).
 - `KREGEX.connection_id`: Regex pattern for validating connection IDs.
+- `IDENTITY_CARD_TYPES`: List of supported identity card types.
 
 ## Error Handling
  

@@ -20,4 +20,21 @@ export default class Discounts extends BaseModule {
     }
     return resp;
   }
+
+    /**
+   * Retrieves the available discount cards for the user.
+   * 
+   * @param {Number} age [0] - The age of the user.
+   * @returns {Promise<object>} Grouped discount cards or an error object.
+   */
+  async getDiscountCards(age=0) {
+    let resp = await this.request(`/main/discount_cards?age=${age}`);
+    if (resp.error === 'discoveryError') {
+      return {
+        error: 'Discount cards not found',
+        code: 'discountCardsNotFound',
+      };
+    }
+    return resp;
+  }
 }

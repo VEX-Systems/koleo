@@ -202,6 +202,14 @@ Retrieves all available discount types.
 
 - **Returns**: `Promise<Array<Object>>`
 
+### `getDiscountCards(age = 0)`
+
+Retrieves available discount cards based on user age.
+
+- **Parameters**:
+  - `age` (number): User's age (default: 0).
+- **Returns**: `Promise<Object>` - Grouped discount cards.
+
 ---
 
 ## Converters Module
@@ -228,3 +236,9 @@ Returns the current date and time formatted for the Koleo API.
 ### `KREGEX.connection_id`
 
 Regex pattern for validating connection UUIDs.
+
+### `IDENTITY_CARD_TYPES`
+
+List of supported identity card types (document types).
+
+- **Returns**: `Array<Object>` - Array of objects containing `id` and `name`.

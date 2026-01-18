@@ -41,4 +41,49 @@ export default class Types extends BaseModule {
     get KREGEX() {
         return Types.KREGEX;
     }
+
+    /**
+     * List of supported identity card types (document types).
+     * @returns {Array<object>} Array of identity card objects containing id and name.
+     */
+
+    static get IDENTITY_CARD_TYPES() {
+        return [
+            {
+                id: 1,
+                name: "Dowód osobisty"
+            },
+            {
+                id: 2,
+                name: "Prawo jazdy"
+            },
+            {
+                id: 3,
+                name: "Paszport"
+            },
+            {
+                id: 4,
+                name: "Książeczka wojskowa"
+            },
+            {
+                id: 5,
+                name: "Legitymacja szkolna"
+            },
+            {
+                id: 6,
+                name: "Legitymacja studencka"
+            },
+            {
+                id: 8,
+                name: "Karta pobytu"
+            }
+        ];
+    }
+
+    /**
+     * Instance accessor for IDENTITY_CARD_TYPES.
+     */
+    get IDENTITY_CARD_TYPES() {
+        return Types.IDENTITY_CARD_TYPES;
+    }
 }
