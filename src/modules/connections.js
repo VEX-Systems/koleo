@@ -50,7 +50,7 @@ export default class Connections extends BaseModule {
         start_id: stationFromObj.id,
         end_id: stationToObj.id,
         only_direct: onlyDirect
-    }
+    };
 
     let resp = await this.request('/main/eol_connections/search', searchObject);
     if (resp.length === 0) {
