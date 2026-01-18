@@ -23,7 +23,7 @@ export default class Connections extends BaseModule {
       throw new Error("Station from, station to and departure after are required");
     }
     const conv = new Converters();
-    const stat = new Stations();
+    const stations = new Stations();
 
     const stationFromSlug = await conv.nameToSlug(stationFrom, true);
     const stationToSlug = await conv.nameToSlug(stationTo, true);
@@ -35,8 +35,8 @@ export default class Connections extends BaseModule {
       };
     }
 
-    const stationFromObj = await stat.getBySlug(stationFromSlug.slug);
-    const stationToObj = await stat.getBySlug(stationToSlug.slug);
+    const stationFromObj = await stations.getBySlug(stationFromSlug.slug);
+    const stationToObj = await stations.getBySlug(stationToSlug.slug);
 
     if (!stationFromObj || !stationToObj) {
       return {
@@ -101,7 +101,7 @@ export default class Connections extends BaseModule {
         throw new Error("Invalid Connection ID format. Expected UUID.");
     }
     
-    let resp = await this.request(`/main/eol_connections/${connectionId}/price`);
-    return resp;
+    let response = await this.request(`/main/eol_connections/${connectionId}/price`);
+    return response;
   }     
 }
